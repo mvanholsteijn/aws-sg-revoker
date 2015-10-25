@@ -1,9 +1,14 @@
 ```
  NAME
- 	aws-sg-revoker	-- revokes IP Permissions from security groups granting access to public IP addresses outside of the AWS account
+       aws-sg-revoker  -- revokes IP Permissions from security
+				groups granting access to public IP addresses outside of the AWS
+				account
 
  SYNOPSIS
-	generate-revoke-rogue-cidrs [ -l ]  [-g security-group-name ] [ -w IP-address ] [-w IP-address ] ...
+	aws-sg-revoker
+		[ -l ]  
+		[-g security-group-name ] 
+		[ -w IP-address ] [-w IP-address ] ...
 
  OPTIONS
 	-l list the suspect IP addresses only
@@ -11,12 +16,13 @@
 	-g security-group-name to generate revokes for
  
  DESCRIPTION
-	generates aws IP permissions revokes for every IP address not in the account or not in the whitelist.
- 	By default, 0.0.0.0/0 and all private IP address ranges are whitelisted.
+       generates aws IP permissions revokes for every IP address not in the account or not 
+	in the whitelist. By default, 0.0.0.0/0 and all private IP address ranges 
+	are whitelisted.
 
 	The -l option shows all the IP addresses and attempts to do a DNS reverse lookup.
 
- 	the commands are not executed automatically. You should do thise, by piping it to a shell:
+ 	the commands are not executed automatically. You should do this, by piping it to a shell:
 
 		$ aws-sg-revoker | tee revoked.log | bash
 
