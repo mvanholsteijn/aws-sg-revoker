@@ -16,8 +16,8 @@
  
  DESCRIPTION
        generates aws IP permissions revokes for every IP address not in the account or not 
-	in the whitelist. By default, 0.0.0.0/0 and all private IP address ranges 
-	are whitelisted.
+	in the whitelist. By default, 0.0.0.0/0, all private IP address and any
+	network ranges are whitelisted.
 
 	The -l option shows all the IP addresses and attempts to do a DNS reverse lookup.
 
@@ -56,7 +56,7 @@
 
  CAVEATS
 	1) The script does not do CIDR block calculation. It uses regexp only. this 
-	   may accidentally cause an unidented removal.
+	   may accidentally cause an unintended removal.
 	2) Do not forget to escape your dot's for whitelist IP addresses :-) 
 
  AUTHOR

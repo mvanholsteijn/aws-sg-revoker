@@ -16,8 +16,8 @@
 # 
 # DESCRIPTION
 #       generates aws IP permissions revokes for every IP address not in the account or not 
-#	in the whitelist. By default, 0.0.0.0/0 and all private IP address ranges 
-#	are whitelisted.
+#	in the whitelist. By default, 0.0.0.0/0, all private IP address and any
+#	network ranges are whitelisted.
 #
 #	The -l option shows all the IP addresses and attempts to do a DNS reverse lookup.
 #
@@ -88,7 +88,9 @@ WHITELIST="0\.0\.0\.0/0|\
 127\.\d{1,3}\.\d{1,3}\.\d{1,3}|\
 172.1[6-9]\.\d{1,3}\.\d{1,3}|\
 172.2\d\.\d{1,3}\.\d{1,3}|\
-172.3[0-1]\.\d{1,3}\.\d{1,3}"
+172.3[0-1]\.\d{1,3}\.\d{1,3}|\
+\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/[1-2][0-9]|\
+\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/3[0-1]"
 LIST_IPS_ONLY=0
 CIDRS_OUTSIDE_ACCOUNT=
 SG_GROUP_NAME='*'
