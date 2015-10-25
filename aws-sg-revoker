@@ -1,15 +1,13 @@
 #!/bin/bash
 #
 # NAME
-#       aws-sg-revoker  -- revokes IP Permissions from security
-#				groups granting access to public IP addresses outside of the AWS
-#				account
+#       aws-sg-revoker  -- revokes access permission from security groups to public IP 
+#				addresses outside of your AWS account
 #
 # SYNOPSIS
-#	aws-sg-revoker
-#		[ -l ]  
-#		[-g security-group-name ] 
-#		[ -w IP-address ] [-w IP-address ] ...
+#	aws-sg-revoker	[ -l ]  
+#			[-g security-group-name ] 
+#			[ -w IP-address ] [-w IP-address ] ...
 #
 # OPTIONS
 #	-l list the suspect IP addresses only
@@ -57,7 +55,8 @@
 #		- jq
 #
 # CAVEATS
-#	1) The script does not do CIDR block calculation. It uses regexp only.
+#	1) The script does not do CIDR block calculation. It uses regexp only. this 
+#	   may accidentally cause an unidented removal.
 #	2) Do not forget to escape your dot's for whitelist IP addresses :-) 
 #
 # AUTHOR
