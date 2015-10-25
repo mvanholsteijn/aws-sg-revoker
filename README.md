@@ -1,3 +1,4 @@
+[//]: # This file is generated from aws-sg-revoker. all changes will be lost.
 ```
  NAME
        aws-sg-revoker  -- revokes IP Permissions from security
